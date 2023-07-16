@@ -9,7 +9,7 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 const appConfig = defineConfig({
   // Application Configuration
-  base: './',
+  base: '/docx-tiptap/',
   build: {
     assetsDir: '',
     outDir: 'dist',
