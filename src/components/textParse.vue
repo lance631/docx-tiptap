@@ -18,7 +18,7 @@
     </div>
 </template>
 <script setup lang="ts">
-import { onMounted ,ref} from 'vue';
+import { onMounted , ref} from 'vue';
 import { textParse } from '@package/main'
 import mammoth from "mammoth";
 
