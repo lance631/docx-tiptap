@@ -9,6 +9,12 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 const appConfig = defineConfig({
   // Application Configuration
+  base: './',
+  build: {
+    assetsDir: '',
+    outDir: 'dist',
+    assetsInlineLimit: 0,
+  },
   plugins: [vue2(), vue2Jsx()],
   resolve: {
     alias: {

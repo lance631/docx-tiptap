@@ -50,5 +50,7 @@
     "vitest": "^0.18.1",
     "vue-template-compiler": "^2.7.7",
     "vue-tsc": "^0.38.8"
-  }
+  },
+  "homepage": "https://lance631.github.io/docx-tiptap/"
+
 }
