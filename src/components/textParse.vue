@@ -22,12 +22,15 @@ import { onMounted ,ref} from 'vue';
 import { textParse } from '@package/main'
 import mammoth from "mammoth";
 
-defineProps<{
-  msg: string
-}>()
+defineProps({
+  msg: {
+    type: String,
+    required: true,
+  },
+})
 const imgSrc = ref('');
 const htmlContent = ref('')
-const loading = ref(false);
+const loading= ref(false);
 
 function getWordFile(e: Event) {
   if (e.target instanceof HTMLInputElement && e.target.files) {
@@ -81,7 +84,7 @@ function getBlobContent(blob: Blob): Promise<string> {
 }
 
 onMounted(() =>{
-    console.log(textParse)
+    console.log("textParse:::",textParse)
     document.addEventListener('paste',async function(event){
          //var promise = await navigator.clipboard.read()
          //console.log('promise:::',promise)
@@ -96,7 +99,7 @@ onMounted(() =>{
         // First, ask the Permissions API if we have some kind of access to
 // the "clipboard-read" feature.
 
-navigator.permissions.query({name: "clipboard-read"}).then(result => {
+navigator.permissions.query({name: 'clipboard-read'  as PermissionName}).then(result => {
   // If permission to read the clipboard is granted or if the user will
   // be prompted to allow it, we proceed.
   const getImageDataPromises = [];

@@ -9,13 +9,19 @@ import { resolve } from 'path'
 // https://vitejs.dev/config/
 const appConfig = defineConfig({
   // Application Configuration
-  // ...
+  plugins: [vue2(), vue2Jsx()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      "@package": path.resolve(__dirname, './package'),
+    }
+  }
 })
 
 const libraryConfig =  defineConfig({
   build:{
     lib:{
-      entry: resolve(__dirname, 'lib/main.ts'),
+      entry: resolve(__dirname, 'package/main.ts'),
       name: 'TextParse',
       // the proper extensions will be added
       fileName: 'text-parse',
@@ -40,7 +46,7 @@ const libraryConfig =  defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
-      "@package": path.resolve(__dirname, 'package'),
+      "@package": path.resolve(__dirname, './package'),
     }
   }
 })
