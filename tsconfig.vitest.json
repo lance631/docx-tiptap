@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.app.json",
+  "exclude": [],
+  "compilerOptions": {
+    "ignoreDeprecations": "5.0",
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "composite": true,
+    "lib": [],
+    "types": ["node", "jsdom"]
+  }
+}
